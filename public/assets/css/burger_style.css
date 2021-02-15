@@ -1,0 +1,23 @@
+body {
+    background-color: orange;
+}
+
+h1 {
+    padding: 10px;
+}
+
+button {
+    background-color: blue;
+    border-radius: 8px;
+    color: white;
+    padding: 6px;
+    margin: 5px;
+}
+
+textarea {
+    text-align: center;
+}
+
+img {
+    padding: 20px;
+}
