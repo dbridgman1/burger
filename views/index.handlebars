@@ -1,15 +1,42 @@
+<div class="container col-lg-4">
+	<div class="row justify-content-center">
+		<img src="https://st3.depositphotos.com/1007168/14192/v/950/depositphotos_141921256-stock-illustration-burger-cartoon-character.jpg" alt="Girl in a jacket" width="300" height="300">
+	</div>
+	<h1 class="row justify-content-center">Burgers to the Moon!</h1>
+
+<h2>Burgers I hate</h2>
+
 <ul>
-{{#each burger_data }}
-{{#unless this.good}}
-<li>
-    {{ this.burger_name }}
-    <button type="submit" class="burger_id" type="text" value={{this.id}}>Devour it</button>
-</li>
-{{/unless}}
-{{/each}}
+  {{#each burgers}}
+  {{#unless good}}
+  {{> burgers/burger-block good=true}}
+  {{/unless}}
+  {{/each}}
 </ul>
 
+<h2>Yummy Burgers</h2>
 
+<ul>
+  {{#each burgers}}
+  {{#if good}}
+  {{> burgers/burger-block good=false}}
+  {{/if}}
+  {{/each}}
+</ul>
 
+<form id="create-form" class="justify-content-center">
+    <div class="row col lg-2 form-group">
+        <label for="ca"></label>
+        <textarea type="text" id="bu" name="name" rows="4" cols="40">
+        
+        </textarea>
+    </div>
+    <div class="row">
+        <button type="submit">Submit</button>
+    </div>
+    <div class="row justify-content-center">
+        <p>Enter a burger that makes you all happy on the inside.  Then hit the button</p>
+    </div>
+</form>
 
-
+</div>
