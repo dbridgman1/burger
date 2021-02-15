@@ -4,12 +4,11 @@ const burger = {
     selectAll(cb) {
         orm.selectAll('burgers', (res) => cb(res));
     },
-    insert(name, cb) {
-        orm.create('burgers', [burger_name, good], [name, true], (res) => cb(res));
+    insert(cols, vals, cb) {
+        orm.insert('burgers', cols, vals, (res) => cb(res));
     },
-    updateOne(id, cb) {
-        var condition = 'id='+ id
-        orm.updateOne('burgers', {good: false}, condition, (res) => cb(res));
+    updateOne(objColVals, condition, cb) {
+        orm.updateOne('burgers', objColVals, condition, (res) => cb(res));
     },
 };
 
