@@ -4,24 +4,35 @@ const burger = require ('../models/burger');
 
 router.get('/', (req, res) => {
    burger.selectAll((data) => {
-       var burger = {
-           burger_data: data,
+       const hbsObject = {
+           burgers: data,
        };
-       res.render('index', burger)
+       console.log('burger', hbsObject)
+       res.render('index', hbsObject)
    })
 });
 
 router.post('/api/burgers', (req,res) => {
-    burger.insert(req.body.good, (result) => {
+    burger.insert(['name', 'good'], [req.body.name, req.body.good], (result) => {
         console.log(result);
-        res.redirect('/');
+        res.json({ id: result.insertID});
     })
 });
 
 router.put('/api/burgers/:id', (req, res) => {
-    burger.updateOne(req.params.id, (result) => {
-        console.log(result);
-        res.sendStatus(200)
+    const condition = `id = ${req.params.id}`;
+
+    console.log('condition', condition);
+    burger.updateOne(
+        {
+            good: req.body.good,
+        },
+        condition, 
+        (result) => {
+            if (result.changedRows === 0) {
+                return res.status(404).end();
+            }
+            res.status(200).end();
     })
 });
 
