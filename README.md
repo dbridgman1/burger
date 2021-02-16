@@ -12,7 +12,7 @@ Link to Deployment: [Burger Application]()
 
 ## Fucntionality
 
-![Screenshot](public/assets/Screenshot.JPG)
+![Screenshot](public/assets/css/Screenshot.JPG)
 
 ## Bugs and Issues
 Found a bug? Review any [open issues][open-issues] or create a [new issues here][new-issue] so we can fix it for you!
