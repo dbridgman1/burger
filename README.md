@@ -2,13 +2,13 @@
 
 ## Description
 
-This project builds a command-line application that allows the user to track employees within a company.  The user will be able to view departments, roles, and employees.  Add departments, roles, and employees.  Update employees roles in a situation where an employee gets a promotion.  Lastly the user can delete departments, roles, and employees.  The application uses MySQL to create a local database.  It also uses the inquirer package to prompt the user with questions within the command-line.
+This project creates a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM.  It follows the MVC design pattern.  Whenever a user submits a burger's name, your app will display the burger on the left side of the page.  It will also store every burger in a database.
 
-## Developer 
+## Developer
  
 <br>
 
-Link to Deployment: [Burger Application]()
+Link to Deployment: [Burger Application](https://hidden-island-64551.herokuapp.com/)
 
 ## Fucntionality
 
