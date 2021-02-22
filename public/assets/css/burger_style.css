@@ -11,8 +11,13 @@ button {
     border-radius: 8px;
     color: white;
     padding: 6px;
-    margin: 5px;
+    margin: 3px;
 }
+
+.btn {
+    text-align: center;
+}
+
 
 textarea {
     text-align: center;
