@@ -1,10 +1,10 @@
-const connection = require('./connection.js')
+const connection = require("./connection.js");
 
 const printQuestionMarks = (num) => {
   const arr = [];
 
   for (let i = 0; i < num; i++) {
-    arr.push('?');
+    arr.push("?");
   }
 
   return arr.toString();
@@ -15,9 +15,10 @@ const objToSql = (ob) => {
 
   for (const key in ob) {
     let value = ob[key];
+  
     if (Object.hasOwnProperty.call(ob, key)) {
-      if (typeof value === 'string' && value.indexOf(' ') >= 0) {
-        value = `'${value}'`;
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
+        value = `"${value}"`;
       }
       arr.push(`${key}=${value}`);
     }
@@ -26,7 +27,7 @@ const objToSql = (ob) => {
 };
 
 const orm = {
-  selectAll(tableInput, cb) {
+  all(tableInput, cb) {
     const queryString = `SELECT * FROM ${tableInput};`;
     connection.query(queryString, (err, result) => {
       if (err) {
@@ -35,15 +36,15 @@ const orm = {
       cb(result);
     });
   },
-  insert(table, cols, vals, cb) {
+  create(table, cols, vals, cb) {
     let queryString = `INSERT INTO ${table}`;
 
-    queryString += ' (';
+    queryString += " (";
     queryString += cols.toString();
-    queryString += ') ';
-    queryString += 'VALUES (';
+    queryString += ") ";
+    queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
-    queryString += ') ';
+    queryString += ") ";
 
     console.log(queryString);
 
@@ -55,13 +56,12 @@ const orm = {
       cb(result);
     });
   },
-
-  updateOne(table, objColVals, condition, cb) {
+  update(table, objColVals, condition, cb) {
     let queryString = `UPDATE ${table}`;
 
-    queryString += ' SET ';
+    queryString += " SET ";
     queryString += objToSql(objColVals);
-    queryString += ' WHERE ';
+    queryString += " WHERE ";
     queryString += condition;
 
     console.log(queryString);
