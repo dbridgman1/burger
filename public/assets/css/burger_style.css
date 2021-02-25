@@ -11,7 +11,7 @@ button {
     border-radius: 8px;
     color: white;
     padding: 6px;
-    margin: 3px;
+    margin-bottom: 15px;
 }
 
 .btn {
@@ -25,4 +25,13 @@ textarea {
 
 img {
     padding: 20px;
+}
+
+.d {
+    text-align: center;
+    padding: 10px;
+}
+
+.c {
+    text-align: center;
 }
