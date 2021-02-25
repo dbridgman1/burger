@@ -1,4 +1,3 @@
-  
 USE burger_db;
 
 INSERT INTO burgers (name, good) VALUES ('Bacon', true);
